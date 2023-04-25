@@ -1,0 +1,252 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Unbounded:wght@400;500;600&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+
+  /*========== Colors ==========*/
+  --first-color: #212A3E;
+  --first-color-alt: #394867;
+  --text-color: #100F0F;
+  --body-color: #ffffff;
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --biggest-font-size: 4rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: .875rem;
+  --smaller-font-size: .813rem;
+
+  /*========== Font weight ==========*/
+  --font-bold: 700;
+
+  /*========== z index ==========*/
+  --z-fixed: 100;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  color: var(--text-color);
+  font-weight: var(--font-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1300px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+
+.section {
+  padding-block: 5rem 1rem;
+  padding: 8rem 0;
+}
+
+.section__title {
+  font-size: var(--h1-font-size);
+  margin-bottom: 1.5rem;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-bold);
+  color: var(--first-color);
+  margin-bottom: 0.5rem;
+}
+
+.center {
+  text-align: center;
+}
+
+/*=============== HEADER & NAV ===============*/
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--body-color);
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  transition: box-shadow .3s, background .4s;
+}
+
+.nav {
+  position: relative;
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  font-weight: var(--font-bold);
+  font-size: var(--h3-font-size);
+}
+
+
+/*=============== BUTTON ===============*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  column-gap: .5rem;
+  background-color: var(--text-color);
+  padding: 1rem 1.5rem;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: var(--font-bold);
+  transition: background .3s;
+  border-radius: .5rem;
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
+
+
+
+/*=============== HOME ===============*/
+
+.home {
+  background-color: var(--text-color);
+  color: white;
+}
+
+.first__link {
+  color: yellow;
+  text-decoration: underline;
+  font-size: var(--h1-font-size);
+}
+
+.name {
+  font-weight: var(--font-bold);
+}
+
+.big__text {
+  font-size: var(--h2-font-size);
+}
+
+
+
+/*=============== FOOTER ===============*/
+.footer {
+  position: relative;
+  padding-block: 3rem 2rem;
+  overflow: hidden;
+}
+
+.footer__copy {
+  text-align: center;
+  font-size: var(--small-font-size);
+  color: var(--text-color-light);
+}
+
+.footer__info {
+justify-items: center;
+row-gap: 1rem;
+padding: 1rem;
+}
+
+.copy__link {
+  padding-left: .5rem;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+
+  .footer__privacy {
+    display: grid;
+    row-gap: .5rem;
+  }
+
+}
+
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+
+  .section__subtitle {
+    margin-bottom: .75rem;
+  }
+
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+  }
+
+  .two__fr {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .three__fr {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .four__fr {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .footer {
+    padding-block: 8rem 3rem;
+  }
+
+  .footer__info {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1064px) {
+  .container {
+    margin-inline: auto;
+  }
+
+  .footer {
+    margin-inline: auto;
+  }
+}
